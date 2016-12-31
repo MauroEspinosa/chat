@@ -9,6 +9,7 @@ var path = require ('path');
 
 app.set('views', path.join(__dirname +'/../views'));
 app.use(express.static(path.join(__dirname + '/../public')));
+console.log(__dirmane);
 app.set("view engine", "ejs");
 
 
