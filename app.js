@@ -7,16 +7,13 @@ var path = require ('path');
 
 
 
-app.set('views', path.join(__dirname +'/../views'));
-app.use(express.static(path.join(__dirname + '/../public')));
+app.set('views', path.join(process.cwd() +'/views'));
+app.use(express.static(path.join(process.cwd() + '/public')));
 app.set("view engine", "ejs");
-
-console.dir(config.root);
-
 
 
 app.get("/", function(req,res){
-  res.render("index.ejs");
+  res.render("index");
 });
 
 io.on("connection", function(socket){
