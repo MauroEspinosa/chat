@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   <head>
@@ -17,7 +18,6 @@
     <script src="./public/push.min.js"></script>
     <script>
     $(document).ready(function(){
-
     $("form").submit(function(){
       var mensaje=$("input#m").val();
       socket.emit("chat message",mensaje);
@@ -25,7 +25,6 @@
       $('#messages').append('<li>'+mensaje+"</li>");
       return false;
     });
-
     socket.on("chat message", function(msg){
       Push.create("Maury Chat", {
         body: msg,
@@ -37,7 +36,6 @@
       });
       $('#messages').append('<li>'+msg+"</li>");
     });
-
     });
     </script>
   </head>
