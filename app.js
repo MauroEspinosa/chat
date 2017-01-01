@@ -17,9 +17,9 @@ app.get("/", function(req,res){
 });
 
 io.on("connection", function(socket){
-  console.log("Usuario conectado");
+  console.log("User conected");
   socket.on("disconnect",function(){
-    console.log("Usuario desconectado");
+    console.log("User disconected");
   });
   socket.on("chat message",function(msg){
     console.log(msg);
