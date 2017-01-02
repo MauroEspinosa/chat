@@ -16,12 +16,13 @@
       var mensaje=$("input#m").val();
       socket.emit("chat message",mensaje);
       $("input#m").val("");
-      $('#messages').append('<li>'+mensaje+"</li>");
+      $('#messages').append("<li class='mio'>"+mensaje+"</li>");
       return false;
     });
     socket.on("chat message", function(msg){
       Push.create("Maury Chat", {
         body: msg,
+        icon: '/mensaje-icono.png',
         timeout: 4000,
         onClick: function(){
                    window.focus();
@@ -47,6 +48,9 @@
        margin-bottom: 5px;
        font-size: 120%;
        font-family: 'Roboto', sans-serif;
+     }
+     ul#messages li.mio{
+       text-align: right;
      }
      ul#messages li:nth-child(odd) {
        background: #EEEEEE;
